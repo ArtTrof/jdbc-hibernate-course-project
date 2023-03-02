@@ -37,6 +37,20 @@
       <version>6.1.6.Final</version>
       <type>pom</type>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.5.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>2.1.214</version>
+      <scope>runtime</scope>
+    </dependency>
 
   </dependencies>
   <build>
@@ -46,8 +60,9 @@
         <artifactId>flyway-maven-plugin</artifactId>
         <version>9.8.1</version>
         <configuration>
-          <url>jdbc:h2:file:./target/foobar</url>
-          <user>sa</user>
+          <url>jdbc:postgresql://localhost:5432/jdbc_hibernate_course_project_db</url>
+          <user>postgres</user>
+          <password>2285</password>
         </configuration>
       </plugin>
     </plugins>
